@@ -1,11 +1,16 @@
+
 import "./App.css";
+import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar";
+import TicketSection from "./components/TicketSection/TicketSection";
+
 
 function App() {
   return (
     <>
     <Navbar/>
-      <h1 className="text-3xl">CS — Ticket System</h1>
+    <Banner/>
+    <TicketSection/>
     </>
   );
 }
