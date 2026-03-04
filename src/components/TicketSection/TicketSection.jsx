@@ -9,11 +9,19 @@ const ticketPromise = fetch("/tickets.json")
 
 const TicketSection = () => {
   const [tasks, setTasks] = useState([])
+  const [resolved, setResolved] = useState([])
     
 
       const handleTask =(ticket)=>{
         const newTask = [...tasks, ticket]
         setTasks(newTask)
+      }
+      const handleResolved =(task)=>{
+        const remainTask = tasks.filter(t => t.id !== task.id)
+        setTasks(remainTask);
+        const newResolved = [...resolved, task]
+        setResolved(newResolved);
+
       }
     return (
         <div className="px-6 md:px-16 lg:px-24 py-14 bg-base-200">
@@ -27,9 +35,9 @@ const TicketSection = () => {
 
     </div>
     <div className='flex-1'>
-      <Task tasks={tasks}/>
+      <Task handleResolved={handleResolved} tasks={tasks}/>
 
-     <Resolved/>
+     <Resolved resolved={resolved}/>
     </div>
   </div>
 </div>
