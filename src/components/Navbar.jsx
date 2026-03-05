@@ -51,7 +51,7 @@ const Navbar = () => {
 
           </div>
 
-          <h1 className="text-lg md:text-2xl md:font-bold">CS — Ticket System</h1>
+          <h1 className="text-lg md:text-2xl md:font-bold">CS - Ticket System</h1>
         </div>
 
         <div className="navbar-end hidden lg:flex">

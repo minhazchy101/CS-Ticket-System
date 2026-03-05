@@ -7,7 +7,7 @@ import Resolved from './Resolved';
 const ticketPromise = fetch("/tickets.json")
       .then((res) => res.json())
 
-const TicketSection = ({handleTask, handleResolved,tasks,resolved}) => {
+const TicketSection = ({handleTask, handleResolved,tasks,resolved, tickets, setTickets }) => {
   
     return (
         <div className="px-6 md:px-16 lg:px-24 py-14 bg-base-200">
@@ -16,6 +16,8 @@ const TicketSection = ({handleTask, handleResolved,tasks,resolved}) => {
     <Suspense fallback={<p>Loading tickets...</p>}>
      <Ticket ticketPromise={ticketPromise}
      handleTask={handleTask}
+      tickets={tickets}
+    setTickets={setTickets}
      /> 
     </Suspense>
 
