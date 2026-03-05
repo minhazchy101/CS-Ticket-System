@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense} from 'react';
 import Ticket from './Ticket';
 import Task from './Task';
 import Resolved from './Resolved';
@@ -7,22 +7,8 @@ import Resolved from './Resolved';
 const ticketPromise = fetch("/tickets.json")
       .then((res) => res.json())
 
-const TicketSection = () => {
-  const [tasks, setTasks] = useState([])
-  const [resolved, setResolved] = useState([])
-    
-
-      const handleTask =(ticket)=>{
-        const newTask = [...tasks, ticket]
-        setTasks(newTask)
-      }
-      const handleResolved =(task)=>{
-        const remainTask = tasks.filter(t => t.id !== task.id)
-        setTasks(remainTask);
-        const newResolved = [...resolved, task]
-        setResolved(newResolved);
-
-      }
+const TicketSection = ({handleTask, handleResolved,tasks,resolved}) => {
+  
     return (
         <div className="px-6 md:px-16 lg:px-24 py-14 bg-base-200">
   <div className="flex flex-col lg:flex-row gap-8">

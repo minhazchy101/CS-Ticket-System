@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-const BannerCard = ({bgVector}) => {
-    return (
-           <div className='w-full'>
+const BannerCard = ({ bgVector }) => {
+  return (
+    <div className="w-full">
       <section
         style={{
           backgroundImage: `url(${bgVector})`,
@@ -21,7 +21,7 @@ const BannerCard = ({bgVector}) => {
         </div>
       </section>
     </div>
-    );
+  );
 };
 
 export default BannerCard;
